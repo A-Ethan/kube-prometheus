@@ -16,3 +16,16 @@ spec:
     runAsUser: 1000
   serviceAccountName: alertmanager-main
   version: v0.17.0
+  storage:
+    volumeClaimTemplate:
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      metadata:
+         name: alertmanager-database
+      spec:
+        accessModes:
+        - ReadWriteOnce
+        resources:
+          requests:
+            storage: 100Gi
+        storageClassName: udisk-ssd

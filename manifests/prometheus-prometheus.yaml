@@ -30,3 +30,15 @@ spec:
   serviceMonitorNamespaceSelector: {}
   serviceMonitorSelector: {}
   version: v2.7.2
+  storage:
+    volumeClaimTemplate:
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      metadata:
+       name: prometheus-database
+      spec:
+       accessModes: [ "ReadWriteOnce" ]
+       storageClassName: "udisk-ssd"
+       resources:
+         requests:
+           storage: 100Gi
