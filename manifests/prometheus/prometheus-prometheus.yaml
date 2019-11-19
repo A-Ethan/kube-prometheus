@@ -41,7 +41,7 @@ spec:
        name: prometheus-database
       spec:
        accessModes: [ "ReadWriteOnce" ]
-       storageClassName: "udisk.csi.ucloud.cn"
+       storageClassName: "ssd-csi-udisk"
        resources:
          requests:
            storage: 100Gi
